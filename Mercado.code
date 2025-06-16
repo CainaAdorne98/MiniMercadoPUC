@@ -1,226 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiniMercado SuperUtil</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(to right, #f4f4f4, #e9ecef);
-            color: #003d14;
-            line-height: 1.6;
-        }
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        background: linear-gradient(to right, #f4f4f4, #e9ecef);
+        color: #003d14;
+        padding: 0;
+        line-height: 1.6;
+    }
 
-        header {
-            background-color: #790000;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    header {
+        background-color: #790000;
+        color: white;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-        }
+    header h1 {
+        font-size: 2em;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            padding-top: 100px; /* espaço para o header */
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+    nav a:hover {
+        text-decoration: underline;
+    }
 
-        h1, h2, h3 {
-            color: #790000;
-            margin-bottom: 10px;
-        }
+    .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-        h1 {
-            font-size: 2.5em;
-        }
+    h2 {
+        color: #790000;
+        font-size: 1.8em;
+        margin-top: 20px;
+    }
 
-        h2 {
-            font-size: 2em;
-        }
+    .produto, .servico {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        padding: 15px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        h3 {
-            font-size: 1.5em;
-        }
+    .produto img, .servico img {
+        width: 100px;
+        height: 100px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 20px;
-        }
+    .produto-info, .servico-info {
+        flex: 1;
+    }
 
-        ul li::before {
-            content: ">";
-            color: #790000;
-            font-weight: bold;
-            margin-right: 8px;
-        }
+    button {
+        background: linear-gradient(to right, #3498db, #2e86de);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-        li {
-            background-color: white;
-            padding: 12px 18px;
-            margin: 10px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    button:hover {
+        background: linear-gradient(to right, #2980b9, #2471a3);
+        transform: translateY(-2px);
+    }
 
-        li:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+    footer {
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.85em;
+        color: #555;
+        margin-top: 40px;
+    }
 
-        img {
-            display: block;
-            max-width: 100%;
-            border-radius: 12px;
-            margin-top: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    footer a {
+        color: #003d14;
+        margin: 0 10px;
+        text-decoration: none;
+    }
 
-        button {
-            background: linear-gradient(to right, #3498db, #2e86de);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-        }
-
-        button:hover {
-            background: linear-gradient(to right, #2980b9, #2471a3);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.85em;
-            color: #555;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            nav a {
-                display: block;
-                margin: 8px 0;
-            }
-
-            button {
-                width: 100%;
-            }
-        }
+    footer a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
-
 <body>
 
     <header>
+        <h1>MiniMercado SuperUtil</h1>
         <nav>
             <a href="#produtos">Produtos</a>
+            <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
             <a href="#localizacao">Localização</a>
-            <a href="#horario">Horário</a>
-            <a href="#pagamento">Pagamento</a>
         </nav>
     </header>
 
     <div class="container">
-        <h1 id="topo">MiniMercado SuperUtil</h1>
+        <section id="produtos">
+            <h2>Produtos por Categoria</h2>
 
-        <h2 id="produtos">> Lista de Produtos</h2>
-        <ul>
-            <li>Arroz</li>
-            <li>Feijão</li>
-            <li>Macarrão</li>
-        </ul>
+            <h3>Arroz</h3>
+            <div class="produto">
+                <img src="https://cdn.awsli.com.br/2500x2500/2777/2777231/produto/309423083/arroz-integral-agulhinha-3b0z5toile.jpg" alt="Arroz Integral">
+                <div class="produto-info">
+                    <strong>Arroz Integral Kaka - 1kg</strong><br>
+                    <p>R$8,00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="https://i.panelinha.com.br/i1/bk-9384-arroz-branco-soltinho.webp" alt="Arroz Branco">
+                <div class="produto-info">
+                    <strong>Arroz Branco Kaka - 1kg</strong><br>
+                    <p>R$7,00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
 
-        <h2>> Variedades</h2>
-        <ul>
-            <!-- Produtos com imagem + botão... -->
-        </ul>
+            <h3>Feijão</h3>
+            <div class="produto">
+                <img src=https://emporio4estrelas.vtexassets.com/arquivos/ids/158089/Feijao-Bolinha-Vermelho-500g.png?v=636930952012630000>
+                <div class="produto-info">
+                    <strong>Feijão Vermelho Serrano - 1kg</strong><br>
+                    <p>R$6,00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Mamf8dUUG1tE8hFfCoyXchyl7fCFFxP4Yi3Byxb2d8-TWyxiMMhiDV0bI2b54eaLaIg&usqp=CAU" alt="Feijão Preto">
+                <div class="produto-info">
+                    <strong>Feijão Preto Serrano - 1kg</strong><br>
+                    <p>R$5,50</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
 
-        <h3>Ver Carrinho de Compras</h3>
-        <button>Ver Carrinho</button>
+            <h3>Macarrão</h3>
+            <div class="produto">
+                <img src="https://www.wikihow.com/images_en/thumb/1/17/Make-Spaghetti-Step-7-Version-8.jpg/v4-460px-Make-Spaghetti-Step-7-Version-8.jpg" alt="Espaguete">
+                <div class="produto-info">
+                    <strong>Espaguete Orquidea - 500g</strong><br>
+                    <p>R$4,00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="https://phygital-files.mercafacil.com/tartufo-bucket/uploads/produto/penne_cozido_230g_fad33e48-c684-46d5-8adf-52b6aea64f0e.png" alt="Penne">
+                <div class="produto-info">
+                    <strong>Macarrão Penne Orquidea - 500g</strong><br>
+                    <p>R$4,50</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
 
-        <h3>Finalizar Compra</h3>
-        <button>Finalizar Compra</button>
+        <section id="servicos">
+            <h2>Serviços Oferecidos</h2>
+            <div class="servico">
+                <img src="https://img.freepik.com/vetores-premium/entregador-montando-a-ilustracao-de-scooter-vermelho_9845-14.jpg?semt=ais_hybrid&w=740" alt="TeleEntrega">
+                <div class="servico-info">
+                    <strong>TeleEntrega</strong>
+                    <p>Entregamos na sua casa com agilidade.</p>
+                    <p><strong>Valor:</strong> R$5,00 por entrega</p>
+                </div>
+            </div>
+            <div class="servico">
+                <img src="https://blog.cestanobre.com.br/wp-content/uploads/2017/04/legislacao-da-cesta-basica-tire-aqui-suas-duvidas.jpeg" alt="Cesta Básica">
+                <div class="servico-info">
+                    <strong>Montagem de Cesta Básica</strong>
+                    <p>Montamos cestas básicas personalizadas para sua família ou empresa.</p>
+                    <p><strong>Valor:</strong> A partir de R$40,00</p>
+                </div>
+            </div>
+        </section>
 
-        <h2 id="contato">> Contato</h2>
-        <p>Telefone: (51) 1234-5678</p>
-        <button>Fazer Pedido</button>
-        <p>Email: minimercadosutil@gmail.com</p>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Telefone para TeleEntrega: (51) 1234-5678 <button>Fazer Pedido</button></p>
+            <p>Email: minimercadosutil@gmail.com</p>
+        </section>
 
-        <h2 id="localizacao">> Localização</h2>
-        <p>Rua das Flores, 123 - Porto Alegre/RS</p>
-        <button>Ver no Mapa</button>
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <p>Rua das Flores, 123 - Centro - Porto Alegre/RS</p>
+            <button>Ver no Mapa</button>
+        </section>
 
-        <h2 id="horario">> Horário de Funcionamento</h2>
-        <p>Seg a Sex: 08:00 - 20:00</p>
-        <p>Sábado: 08:00 - 18:00</p>
-        <p>Domingo: Fechado</p>
+        <section>
+            <h2>Horário de Funcionamento</h2>
+            <p>Segunda a Sexta: 08:00 - 20:00</p>
+            <p>Sábado: 08:00 - 18:00</p>
+            <p>Domingo: Fechado</p>
+        </section>
 
-        <h2 id="pagamento">> Formas de Pagamento</h2>
-        <ul>
-            <li>Dinheiro</li>
-            <li>Cartão de Débito</li>
-            <li>Cartão de Crédito</li>
-            <li>Pix</li>
-        </ul>
+        <section>
+            <h2>Formas de Pagamento</h2>
+            <ul>
+                <li>Dinheiro</li>
+                <li>Cartão de Débito</li>
+                <li>Cartão de Crédito</li>
+                <li>Pix</li>
+            </ul>
+        </section>
     </div>
 
     <footer>
         <p>&copy; 2024 MiniMercado SuperUtil. Todos os direitos reservados.</p>
-        <p>Desenvolvido por Cainã</p>
-        <p>contato:</p>
-        <p>Telefone: (51) 1234-5678</p>
-        <p>Email: minimercadosutil@gmail.com</p>
-        
+        <p>Desenvolvido por Cainã Adorne</p>
+        <nav>
+            <a href="#produtos">Produtos</a> | 
+            <a href="#servicos">Serviços</a> | 
+            <a href="#contato">Contato</a> | 
+            <a href="#localizacao">Localização</a>
+        </nav>
     </footer>
-
 </body>
-
 </html>
