@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMercado SuperUtil</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(to right, #f4f4f4, #e9ecef);
+            color: #003d14;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #790000;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            padding-top: 100px; /* espaço para o header */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #790000;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: ">";
+            color: #790000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        li {
+            background-color: white;
+            padding: 12px 18px;
+            margin: 10px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background: linear-gradient(to right, #3498db, #2e86de);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #2980b9, #2471a3);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85em;
+            color: #555;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#horario">Horário</a>
+            <a href="#pagamento">Pagamento</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 id="topo">MiniMercado SuperUtil</h1>
+
+        <h2 id="produtos">> Lista de Produtos</h2>
+        <ul>
+            <li>Arroz</li>
+            <li>Feijão</li>
+            <li>Macarrão</li>
+        </ul>
+
+        <h2>> Variedades</h2>
+        <ul>
+            <!-- Produtos com imagem + botão... -->
+        </ul>
+
+        <h3>Ver Carrinho de Compras</h3>
+        <button>Ver Carrinho</button>
+
+        <h3>Finalizar Compra</h3>
+        <button>Finalizar Compra</button>
+
+        <h2 id="contato">> Contato</h2>
+        <p>Telefone: (51) 1234-5678</p>
+        <button>Fazer Pedido</button>
+        <p>Email: minimercadosutil@gmail.com</p>
+
+        <h2 id="localizacao">> Localização</h2>
+        <p>Rua das Flores, 123 - Porto Alegre/RS</p>
+        <button>Ver no Mapa</button>
+
+        <h2 id="horario">> Horário de Funcionamento</h2>
+        <p>Seg a Sex: 08:00 - 20:00</p>
+        <p>Sábado: 08:00 - 18:00</p>
+        <p>Domingo: Fechado</p>
+
+        <h2 id="pagamento">> Formas de Pagamento</h2>
+        <ul>
+            <li>Dinheiro</li>
+            <li>Cartão de Débito</li>
+            <li>Cartão de Crédito</li>
+            <li>Pix</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MiniMercado SuperUtil. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Cainã</p>
+        <p>contato:</p>
+        <p>Telefone: (51) 1234-5678</p>
+        <p>Email: minimercadosutil@gmail.com</p>
+        
+    </footer>
+
+</body>
+
+</html>
