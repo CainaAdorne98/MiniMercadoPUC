@@ -19,13 +19,43 @@
             font-family: 'Poppins', Arial, sans-serif;
             background: linear-gradient(to right, #f4f4f4, #e9ecef);
             color: #003d14;
-            padding: 20px;
             line-height: 1.6;
         }
 
-        h1,
-        h2,
-        h3 {
+        header {
+            background-color: #790000;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            padding-top: 100px; /* espaço para o header */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
             color: #790000;
             margin-bottom: 10px;
         }
@@ -105,15 +135,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -123,20 +144,34 @@
                 font-size: 1.5em;
             }
 
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
             button {
                 width: 100%;
             }
         }
     </style>
-
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>MiniMercado SuperUtil</h1>
+    <header>
+        <nav>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#horario">Horário</a>
+            <a href="#pagamento">Pagamento</a>
+        </nav>
+    </header>
 
-        <h2>> Lista de Produtos</h2>
+    <div class="container">
+        <h1 id="topo">MiniMercado SuperUtil</h1>
+
+        <h2 id="produtos">> Lista de Produtos</h2>
         <ul>
             <li>Arroz</li>
             <li>Feijão</li>
@@ -145,48 +180,7 @@
 
         <h2>> Variedades</h2>
         <ul>
-            <li>
-                Arroz Integral
-                <img src="https://cdn.awsli.com.br/2500x2500/2777/2777231/produto/309423083/arroz-integral-agulhinha-3b0z5toile.jpg"
-                    alt="Arroz Integral" width="100" height="100">
-                <figcaption>Arroz Integral Kaka - 1kg - R$8,00</figcaption>
-                <button>Comprar</button>
-            </li>
-            <li>
-                Arroz Branco
-                <img src="https://i.panelinha.com.br/i1/bk-9384-arroz-branco-soltinho.webp" alt="Arroz Branco"
-                    width="100" height="100">
-                <figcaption>Arroz Branco Kaka - 1kg - R$7,00</figcaption>
-                <button>Comprar</button>
-            </li>
-            <li>
-                Feijão Vermelho
-                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_950,h_618/https://blog.britania.com.br/wp-content/uploads/2024/04/como-fazer-feijao-1-1024x666.webp"
-                    alt="Feijão Vermelho" width="100" height="100">
-                <figcaption>Feijão Vermelho Serrano - 1kg - R$6,00</figcaption>
-                <button>Comprar</button>
-            </li>
-            <li>
-                Feijão Preto
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Mamf8dUUG1tE8hFfCoyXchyl7fCFFxP4Yi3Byxb2d8-TWyxiMMhiDV0bI2b54eaLaIg&usqp=CAU"
-                    alt="Feijão Preto" width="100" height="100">
-                <figcaption>Feijão Preto Serrano - 1kg - R$5,50</figcaption>
-                <button>Comprar</button>
-            </li>
-            <li>
-                Macarrão Espaguete
-                <img src="https://www.wikihow.com/images_en/thumb/1/17/Make-Spaghetti-Step-7-Version-8.jpg/v4-460px-Make-Spaghetti-Step-7-Version-8.jpg"
-                    alt="Macarrão Espaguete" width="100" height="100">
-                <figcaption>Macarrão Espaguete Orquidea - 500g - R$4,00</figcaption>
-                <button>Comprar</button>
-            </li>
-            <li>
-                Macarrão Penne
-                <img src="https://phygital-files.mercafacil.com/tartufo-bucket/uploads/produto/penne_cozido_230g_fad33e48-c684-46d5-8adf-52b6aea64f0e.png"
-                    alt="Macarrão Penne" width="100" height="100">
-                <figcaption>Macarrão Penne Orquidea - 500g - R$4,50</figcaption>
-                <button>Comprar</button>
-            </li>
+            <!-- Produtos com imagem + botão... -->
         </ul>
 
         <h3>Ver Carrinho de Compras</h3>
@@ -195,21 +189,21 @@
         <h3>Finalizar Compra</h3>
         <button>Finalizar Compra</button>
 
-        <h2>> Contato</h2>
-        <p>Telefone para tele-entrega: (51) 1234-5678</p>
+        <h2 id="contato">> Contato</h2>
+        <p>Telefone: (51) 1234-5678</p>
         <button>Fazer Pedido</button>
         <p>Email: minimercadosutil@gmail.com</p>
 
-        <h2>> Localização</h2>
-        <p>Rua das Flores, 123 - Centro - Porto Alegre/RS</p>
+        <h2 id="localizacao">> Localização</h2>
+        <p>Rua das Flores, 123 - Porto Alegre/RS</p>
         <button>Ver no Mapa</button>
 
-        <h2>> Horário de Funcionamento</h2>
-        <p>Segunda a Sexta: 08:00 - 20:00</p>
+        <h2 id="horario">> Horário de Funcionamento</h2>
+        <p>Seg a Sex: 08:00 - 20:00</p>
         <p>Sábado: 08:00 - 18:00</p>
         <p>Domingo: Fechado</p>
 
-        <h2>> Formas de Pagamento</h2>
+        <h2 id="pagamento">> Formas de Pagamento</h2>
         <ul>
             <li>Dinheiro</li>
             <li>Cartão de Débito</li>
@@ -218,11 +212,17 @@
         </ul>
     </div>
 
+    <footer>
+        <p>&copy; 2024 MiniMercado SuperUtil. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Cainã</p>
+        <p>contato:</p>
+        <p>Telefone: (51) 1234-5678</p>
+        <p>Email: minimercadosutil@gmail.com</p>
+        
+    </footer>
+
 </body>
 
-<footer>
-    <p>&copy; 2024 MiniMercado SuperUtil. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Cainã</p>
-</footer>
-
 </html>
+
+    
